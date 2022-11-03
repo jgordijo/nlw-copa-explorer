@@ -1,46 +1,36 @@
-function createMatches(matches) {
-  return matches.map(match =>
-    `
-      <li>
-        <img src="./assets/icon=${match.home}.svg" alt="${match.home}" />
-        <strong>${match.time}</strong>
-        <img src="./assets/icon=${match.away}.svg" alt="${match.away}" />
-      </li>
-    `
-  );
-}
-
-function createCards({ date, day, matches }) {
-  console.log
+function createMatch(homeTeam, time, awayTeam) {
   return `
-  <div class="card">
-    <h2>${date} <span>${day}</span></h2>
-    <ul>
-      ${matches}
-    </ul>
-  </div>
-`
+    <li>
+      <img src="./assets/icon=${homeTeam}.svg" alt="${homeTeam}'s flag" />
+      <strong>${time}</strong>
+      <img src="./assets/icon=${awayTeam}.svg" alt="${awayTeam}'s flag" />
+    </li>
+  `
 }
 
+function createCard(date, day, matches) {
+  return `
+    <div class="card">
+      <h2>${date} <span>${day}</span></h2>
+      <ul>
+        ${matches}
+      </ul>
+    </div>
+  `
+}
 
 document.querySelector("#app").innerHTML = `
-<header>
-  <img src="./assets/logo.svg" alt="Logo da NLW">
-</header>
-<main id="cards">
-  ${createCards({
-    date: '20/11',
-    day: 'Domingo',
-    matches: createMatches([{ home: 'qatar', away: 'ecuador', time: '13:00' }])
-  })}
-  ${createCards({
-    date: '21/11',
-    day: 'Segunda',
-    matches: createMatches([
-      { home: 'england', away: 'iran', time: '10:00' },
-      { home: 'senegal', away: 'netherlands', time: '13:00' },
-      { home: 'united states', away: 'wales', time: '16:00'}
-    ])
-  })}
-</main>
+  <header>
+    <img src="./assets/logo.svg" alt="Logo da NLW" />
+  </header>
+  <main id="cards">
+    ${createCard("24/11", "quinta", createMatch("brazil", "16:00", "serbia"))}
+    ${createCard(
+      "28/11",
+      "segunda",
+      createMatch("switzerland", "13:00", "brazil") +
+      createMatch("portugal", "16:00", "uruguay")
+    )}
+    ${createCard("02/12", "sexta", createMatch("brazil", "16:00", "cameroon"))}
+  </main>
 `
