@@ -8,9 +8,10 @@ function createMatch(homeTeam, time, awayTeam) {
   `
 }
 
+let delay = 0;
 function createCard(date, day, matches) {
   return `
-    <div class="card">
+    <div class="card" style="animation-delay: ${delay}s">
       <h2>${date} <span>${day}</span></h2>
       <ul>
         ${matches}
