@@ -8,7 +8,7 @@
   --card-primary-color: #f7dd43;
   --card-title-border-color: #746615;
   --card-bg-color: #1d1c19;
-  --bg-img: url(./assets/bg.svg);
+  --bg-img: url(./assets/bg-yellow.svg)
 }
 
 body.blue {
@@ -118,7 +118,7 @@ header {
 }
 
 .card {
-  animation: appear 1s;
+  animation: appear 1s forwards;
 }
 
 .card ul li strong:hover,
