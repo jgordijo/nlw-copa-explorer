@@ -20,7 +20,7 @@ function createCard({ date, day, matches }) {
 }
 
 document.querySelector("#cards").innerHTML =
-  createCard({ date: "20/11", day: "domingo", matches: createMatch({ homeTeam: "qatar", time: "13:00", awayTeam: "ecuador" }) }) +
+  createCard({ date: "20/11", day: "domingo", matches: createMatch({ homeTeam: "qatar", time: "0 x 2", awayTeam: "ecuador" }) }) +
   createCard({
     date: "21/11",
     day: "segunda",
